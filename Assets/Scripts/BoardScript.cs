@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class BoardScript : MonoBehaviour
 {
-    public float speed;
     private Rigidbody2D rb;
-    private float input;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(input * speed * Time.fixedDeltaTime, 0);
-    }
-
-    public void setDirection(int direction)
-    {
-        input = direction;
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            rb.position = new Vector2(touchPosition.x, rb.position.y);
+        }
     }
 }
