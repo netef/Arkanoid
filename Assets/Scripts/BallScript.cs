@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallScript : MonoBehaviour
 {
@@ -9,20 +10,30 @@ public class BallScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(5f, -5f);
+        rb.velocity = Random.insideUnitCircle.normalized * 10f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
+        rb.velocity = rb.velocity.normalized * 10f;
     }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag.Equals("Target"))
+        switch (other.gameObject.tag)
         {
-            Destroy(other.gameObject);
+            case "Target":
+                {
+                    ScoreManagerScript.Instance.increaseScore();
+                    Destroy(other.gameObject);
+                    if (ScoreManagerScript.Instance.score == 54)
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    break;
+                }
+            case "Lose":
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    break;
+                }
         }
     }
 }
