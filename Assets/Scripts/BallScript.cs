@@ -33,14 +33,14 @@ public class BallScript : MonoBehaviour
                     if (ScoreManagerScript.Instance.score == 52)
                     {
                         ScoreManagerScript.Instance.score = 0;
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                        SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
                     }
                     break;
                 }
             case "Lose":
                 {
                     ScoreManagerScript.Instance.score = 0;
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                    SceneManager.LoadScene("LoseScene", LoadSceneMode.Single);
                     break;
                 }
         }
