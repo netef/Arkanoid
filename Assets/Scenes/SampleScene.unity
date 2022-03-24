@@ -2332,7 +2332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df9ebd9ab2665a4e893b03537d357d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
 --- !u!1 &1052862577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c7cf85298f45d4b8751b2c02c8f43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockSound: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
+  explosion: {fileID: 2240382451770083862, guid: e01c4d9210f90784ca1c8dc53298b30c, type: 3}
 --- !u!1001 &1386511055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4165,7 +4166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce46070b6e1ae44c9378d01bd4129f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 1010840230}
 --- !u!1001 &1928957741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5110,7 +5110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7871089045159182905, guid: 4d5ec5e655a21334ca85194b66a3b170, type: 3}
       propertyPath: m_Name
-      value: Circle
+      value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 7871089045159182905, guid: 4d5ec5e655a21334ca85194b66a3b170, type: 3}
       propertyPath: m_TagString

@@ -17,6 +17,12 @@ public class ScoreManagerScript : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+
+        score = 0;
+    }
+
     public void increaseScore()
     {
         score++;
